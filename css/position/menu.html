@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .menu ul {
+        list-style-type: none;
+      }
+      .menu > ul {
+        display: flex;
+      }
+      .menu ul li {
+        padding: 8px 14px;
+        background-color: gray;
+      }
+      .menu ul li:hover {
+        background-color: rgb(100, 100, 100);
+      }
+      .menu a {
+        text-decoration: none;
+      }
+      .menu-item {
+        position: relative;
+      }
+      .menu-item > ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+      }
+      .menu-item:hover > ul {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <ul>
+          <li class="menu-item">
+            <a href="">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="">Category</a>
+            <ul>
+              <li>Phone</li>
+              <li>IPad</li>
+              <li>Desktop</li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="">Product</a>
+          </li>
+          <li class="menu-item">
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
