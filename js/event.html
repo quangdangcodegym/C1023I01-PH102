@@ -27,22 +27,27 @@
       <form>
         <div class="row">
           <label for="">Name: </label>
-          <input id="txtName" type="text" placeholder="Enter name" />
+          <input
+            oninput="handleInputChange()"
+            id="txtName"
+            type="text"
+            placeholder="Enter name"
+          />
         </div>
         <div class="row">
           <label for="">Age: </label>
-          <input id="nAge" type="number" />
+          <input id="nAge" type="number" oninput="handleInputChange()" />
         </div>
         <div class="row">
           <label for="">Gender</label>
-          <select name="" id="nGender">
+          <select name="" id="nGender" oninput="handleInputChange()">
             <option value="1">Nam</option>
             <option value="2">Nữ</option>
           </select>
         </div>
         <div class="row">
           <button onclick="handleBtnShowClick()" type="button">Show</button>
-          <label id="ltracking">Tracking: ....</label>
+          <label id="lTracking">Tracking: ....</label>
           <button type="button">Clear</button>
         </div>
       </form>
@@ -67,6 +72,10 @@
         let gender = document.getElementById("nGender").value;
 
         alert("Name: " + name + " age: " + age + " gender: " + gender);
+      }
+      function handleTxtNameChange() {
+        let name = document.getElementById("txtName").value;
+        document.getElementById("lTracking").innerText = "Tracking: " + name;
       }
     </script>
   </body>
