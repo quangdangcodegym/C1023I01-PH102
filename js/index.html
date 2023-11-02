@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="txtName1">HELLO KIỆT</h1>
+    <h1 id="txtName2">HELLO THÁI</h1>
+    <h1 id="txtName3">HELLO LỘC</h1>
+
+    <!-- <button onclick="alert('Hello')">Say Hello</button> -->
+
+    <button onclick="handleBtnChangeColorClick()">Change Color</button>
+    <script>
+      /*
+         Element: thẻ, get: lấy, getElementById: lấy thẻ theo ID
+         document.getElementById("txtName").style.color = "red";
+
+         // query: truy vấn, selector: bộ chọn: querySelector: truy vấn theo bộ chọn
+         querySelector: lấy ra cái đầu tiên tìm thấy
+         querySelectorAll: lấy hết
+
+         document.querySelector("h1");
+         document.querySelectorAll("h1");
+         document.querySelectorAll("#txtName1 , #txtName2 , #txtName3")
+
+         // prompt: hiển thị thông báo nhập vào
+         // let : khai báo 1 biến để chứa giá trị
+         let a = prompt("Nhập vào giá trị a: ");
+         // alert để thông báo
+        alert("Gia tri moi nhap la" + a);
+        // hiển thị message dưới màn hình cosole
+        console.log("GIA tri moi nhap hiển thị dưới console: " + a);
+
+        onclick="alert('Hello')"    : đăng ký lắng nghe sự kiện click vào nút button
+
+       */
+
+      function handleBtnChangeColorClick() {
+        let position = prompt("Nhập vị trí muốn đổi màu: ");
+        document.querySelectorAll("h1")[position - 1].style.color = "red";
+      }
+    </script>
+  </body>
+</html>
