@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 16px;
+        font-family: "Times New Roman", Times, serif;
+      }
+      #ltracking {
+        display: unset;
+      }
+      .row label {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="row">
+          <label for="">Name: </label>
+          <input id="txtName" type="text" placeholder="Enter name" />
+        </div>
+        <div class="row">
+          <label for="">Age: </label>
+          <input id="nAge" type="number" />
+        </div>
+        <div class="row">
+          <label for="">Gender</label>
+          <select name="" id="nGender">
+            <option value="1">Nam</option>
+            <option value="2">Nữ</option>
+          </select>
+        </div>
+        <div class="row">
+          <button onclick="handleBtnShowClick()" type="button">Show</button>
+          <label id="ltracking">Tracking: ....</label>
+          <button type="button">Clear</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      /*
+
+      Event: 
+            oninput: nhập
+            onchange: dữ liệu thay đổi giá trị
+            onmouseover: rê chuột vào vào thẻ
+            onmouseout: rê chuột ra thẻ
+            onfocus: đưa chuột vào ô input để nhập - Áp dụng cho thẻ input
+            onblur: đưa chuột ra khỏi ô input
+           B1: đọc thông tin ra
+           B2: hiển thị
+           */
+      function handleBtnShowClick() {
+        // let name = document.querySelector("#txtName").value;
+        let name = document.getElementById("txtName").value;
+        let age = document.getElementById("nAge").value;
+        let gender = document.getElementById("nGender").value;
+
+        alert("Name: " + name + " age: " + age + " gender: " + gender);
+      }
+    </script>
+  </body>
+</html>
