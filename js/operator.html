@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       - Kiểu nguyên thủy
+         Số: number: số nguyên - integer, long, số thực - float, double
+         Chuỗi: string - "Hello" - 'Hello' : chuỗi thì nằm trong dấu nháy "", hoặc ''
+        đúng/sai: boolean : true/false
+
+        - Kiểu đối tượng: (array, object)
+        mảng, danh sách: array
+        đối tượng: object
+
+         let a = 5; // number
+        let b = "Hello 'QUANG'";      // b: kiểu string - giá trị "Hello 'QUANG'"; 
+        console.log(typeof b);
+        let c = true;
+        let b;      // không khai bao giá trị: thì b sẽ undefined
+        let b = null;       // b có giá trị NULL biến b ko có thể thực hiện gì hết
+        b.contains("a");
+
+        let b = 10 / "aa";      // b: NaN : b not a number
+        console.log(b);
+
+        let a = "14"; 
+        let b = "2";
+
+        console.log(a + b);         // Phép cộng: ưu tiên cộng chuỗi
+
+        let a = "14"; 
+        let b = "2";
+
+        console.log(a - b);         // Phép cộng: ưu tiên số
+
+
+        let a = 4;
+        //  a = a + 6;
+        a += 6;         
+        a *= 6; //a = a*6
+
+        console.log(a);
+
+        let a = 7;
+        console.log(a % 4); // Phép %: chia lấy dư
+
+        let a = 4;
+        //   a += 1;
+        a++; //a += 1;
+        ++a; // a += 1;
+
+        a--;   //a = a -1;
+        --a;   // a = a - 1;
+
+        let a = 5;
+        let b = 12;
+
+        if (a == 6) {         // == so sánh bằng, != so sánh khác
+            console.log("HELLO");
+        }
+
+        let a = 5;
+        let b = 12;
+
+        if (a > 5 && b > 5) {
+            console.log("HELLO");
+        }
+
+        let a = 4;
+        //  a++;
+        //  ++a;
+
+        let b = a++ + ++a * 2;
+
+        console.log(a);
+        console.log(b);
+
+        let x = 10;
+      let y = x-- - --x * 2;
+      console.log(x + " " + y);
+
+
+      OPERATOR: +-* /, %, ==, !=, &&, ||, > <, >=, <=, +=, a++, ++a, 
+
+      let a = 5; // kiểu number
+      let b = "6"; // kiểu chuỗi
+      if (a !== b) {
+        // bằng giá trị && bằng kiểu dữ liệu
+        console.log("KHÁC NHAU");
+      }
+      // => true: "HELLO", 5, true
+      // => false: 0, "", false, null, undefined, NaN
+      let a = 3;
+      let b = 6;
+      if (++a + b == "10" && a) {
+        console.log("VÀO IF RỒI MỪNG QUÁ");
+      }
+
+      let a = 5;
+      if (a++ > 5) {
+        //a =6
+        a++;
+      } else {
+        a--;
+      }
+      console.log(a);
+         * */
+    </script>
+  </body>
+</html>
