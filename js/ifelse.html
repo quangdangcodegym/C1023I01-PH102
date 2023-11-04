@@ -38,13 +38,54 @@
       } else {
         console.log("A < 10");
       }
-      */
-
       // "6": string => thêm dấu + để biến avgPoint thành số
       //   let avgPoint = +prompt("Nhập vào 1 điểm");
       let avgPoint = parseInt(prompt("Nhập vào 1 điểm"));
 
-      console.log(typeof avgPoint);
+      if (avgPoint < 0 || avgPoint > 10) {
+        console.log("DIỂM KO HỢP LỆ");
+      } else {
+        if (avgPoint >= 8) {
+          console.log("GIỎI");
+        } else {
+          if (avgPoint >= 7) {
+            console.log("KHÁ");
+          } else {
+            if (avgPoint >= 5) {
+              console.log("TB");
+            } else {
+              console.log("YẾU");
+            }
+          }
+        }
+      }
+
+      let avgPoint = parseInt(prompt("Nhập vào 1 điểm"));
+
+      if (avgPoint < 0 || avgPoint > 10) {
+        console.log("DIỂM KO HỢP LỆ");
+      } else if (avgPoint >= 8) {
+        console.log("GIỎI");
+      } else if (avgPoint >= 7) {
+        console.log("KHÁ");
+      } else if (avgPoint >= 5) {
+        console.log("TRUNG BÌNH");
+      } else {
+        console.log("YẾU");
+      }
+      */
+      let avgPoint = parseInt(prompt("Nhập vào 1 điểm"));
+      if (avgPoint >= 5 && avgPoint < 7) {
+        alert(" tb");
+      } else if (avgPoint < 0 || avgPoint > 10) {
+        alert(" ĐKl");
+      } else if (avgPoint >= 7 && avgPoint < 8) {
+        alert(" kha");
+      } else if (avgPoint >= 8 && avgPoint < 10) {
+        alert("giỏi");
+      } else {
+        alert("yếu");
+      }
     </script>
   </body>
 </html>
