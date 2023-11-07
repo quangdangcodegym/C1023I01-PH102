@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* Vòng lặp while (ĐK - đúng){
+            // thực hiện vòng lặp
+        }
+
+
+        let i = 0;
+        while (true) {
+            if (i < 10) {
+            console.log("HELLO " + i);
+            } else {
+            break;
+            }
+
+            i++;
+        }
+        */
+
+      // Đếm coi có bao nhiêu số tận cùng là 3 từ 0 ->1000
+      let count = 0;
+      let i = 1;
+      while (i <= 1000) {
+        if (i % 10 == 3) {
+          count++;
+        }
+        i++;
+      }
+      console.log(count);
+    </script>
+  </body>
+</html>
