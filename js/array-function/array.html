@@ -72,9 +72,8 @@
         let numbers = [7, 1, 7];
 
         console.log(numbers.join("anhyeuem"));
-        */
 
-      let numnbers = "3x5x7x9";
+        let numnbers = "3x5x7x9";
       let items = numnbers.split("x"); // ["3", "5", "7", "9"]
       let total = 0;
       for (let i = 0; i < items.length; i++) {
@@ -82,6 +81,16 @@
         total = total + parseInt(items[i]);
       }
       console.log(total); // HOÀNG:03579 THÁI24
+
+      arr.splice( vi tri xoa, soluong cần xóa có thể 0 hoặc nhiều, [1 hoặc nhiều phần tử cần thêm])
+      let arr = [5, 7, 4, 3];
+      arr.splice(1, 2, 5, 5); // [5,5,5 ,3]
+      console.log(arr);
+
+      let arr = [5, 7, 4, 3];
+      arr.splice(1, 2); // [5 ,3]
+      console.log(arr);
+        */
     </script>
   </body>
 </html>

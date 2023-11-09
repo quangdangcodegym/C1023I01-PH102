@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+        // Tìm vị trí của 1 giá trị nhập vào trong mảng
+      let arr = [7, 1, 6, 9, 4];
+      let value = +prompt("Nhập vào số cần tìm: ");
+      let index = -1;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == value) {
+          index = i;
+          break;
+        }
+      }
+      if (index == -1) {
+        alert("Không tìm thấy");
+      } else {
+        alert(`Vị trí của ${value} trong mảng là ${index}`);
+      }
+
+      // Đảo ngược mảng ban đầu
+      let arr = [7, 1, 6, 9];
+
+      //   let arrNew = [9, 6, 1, 7];
+      // arrNew = []
+      let arrNew = [];
+      for (let i = arr.length - 1; i >= 0; i--) {
+        arrNew.push(arr[i]);
+      }
+      console.log(arrNew);
+
+
+      // Dùng cờ hiệu
+      //   let arr = [4, 8, 9, 6]; // mảng ko toàn chẵn
+      let arr = [4, 8, 8, 6]; // mảng toàn chẳn
+      let flag = true;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 != 0) {
+          flag = false;
+          break;
+        }
+      }
+      if (flag == true) {
+        alert("Mảng toàn chẵn");
+      } else {
+        alert("Mảng ko toàn chẵn");
+      }
+      **/
+
+      let count = 0;
+      let arr = [4, 8, 9, 6];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+          count++;
+        }
+      }
+      if (count == arr.length) {
+        alert("Mảng toàn chẵn");
+      } else {
+        alert("Mảng ko toàn chẵn");
+      }
+    </script>
+  </body>
+</html>
