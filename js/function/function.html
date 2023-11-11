@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      console.log("Hello");
+      console.log("Hello");
+      console.log("Hello");
+      console.log("Hello");
+      console.log("Hello");
+
+      for (let i = 0; i < 5; i++) {
+        console.log("Hello Thai");
+      }
+      for (let i = 0; i < 5; i++) {
+        console.log("Hello Hoàng");
+      }
+      for (let i = 0; i < 5; i++) {
+        console.log("Hello Tri");
+      }
+
+
+      // 10, 'Hello Trí'
+      function printHello(number, message) {
+        for (let i = 0; i < number; i++) {
+          console.log(message);
+        }
+      }
+
+      printHello(10, "Hello Trí");
+      printHello(5, "Hello Hoàng");
+
+
+      function sum(a, b) {
+        return a + b;
+      }
+      console.log(sum(10, 10));
+
+
+      let total = 100;
+      function sum(a, b) {
+        let total = 0;
+        total = a + b;
+        return total;
+      }
+
+      console.log(sum(10, 10));
+      console.log(total);
+
+
+      let total = 100;
+      function sum(a, b) {
+        // let total = 0;
+        total = a + b;
+        return total;
+      }
+
+      console.log(sum(10, 10));
+      console.log(total);
+
+
+      let a = 5;
+      let b = 10;
+
+      function swap(a, b) {
+        // tham số a, b
+        let temp = a;
+        a = b;
+        b = temp;
+      }
+
+      // pass by value - truyền kiểu nguyên thủy
+      swap(5, 10); // đối số 5, 10 -> kiểu dữ liệu nguyên thủy: string, number, boolean
+
+      console.log(a);
+      console.log(b);
+
+
+       let arr = [5, 10]; // pass reference: array
+
+      function swapArray(numbers) {
+        let temp = numbers[0];
+
+        numbers[0] = numbers[1];
+        numbers[1] = temp;
+      }
+      swapArray(arr);
+      console.log(arr); //  [10, 5]
+
+
+      Viết hàm tính tổng các số trong mảng:
+        Đầu vào: 1 mảng
+        Đầu ra: số
+        Tên hàm: getTotal
+
+      function getTotal(numbers) {
+
+        for (let i = 0; i < numbers.length; i++) {
+          total += numbers[i];
+        }
+        return total;
+      }
+
+      let arr1 = [5, 5, 1];
+      let arr2 = [1, 1, 1];
+      console.log(getTotal(arr1)); //11
+      console.log(getTotal(arr2)); // 14
+
+
+      let arr = [2, 4, 6];
+      let arr1 = [2, 4, 1];
+
+        Đầu vào: 1 mảng
+        Đầu ra: true/false
+        Tên hàm: isAllEven
+      function isAllEven(arr) {
+        // let flag = true; // giả sử mảng toàn chẵn
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 != 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      let arr = [5, 1, 7, 9];
+
+      alert(findPosition(arr, 19));
+    Đầu vào: mảng, số cần tìm
+    Đầu ra: vị trí tìm được nếu ko thấy thì trả về -1
+    Tên hàm: findPosition
+       function findPosition(numbers, value) {
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] == value) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+
+      let arr = [5.0, -6.5, -5, 8.5];
+
+      function getTotalAllPositive(arr) {
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > 0) {
+            total += arr[i];
+          }
+        }
+        return total;
+      }
+
+      let numbers = [4, 7, 1, 8, 2];
+
+      function reverse1(numbers) {
+        let results = [];
+        for (let i = numbers.length - 1; i >= 0; i--) {
+          results.push(numbers[i]);
+        }
+        return results;
+      }
+
+      //   console.log(reverse1(numbers)); // [2, 8, 1, 7, 4]
+
+      reverse1(numbers); //
+      console.log(numbers);
+       */
+
+      let numbers = [4, 7, 1, 8, 2];
+
+      function reverse2(numbers) {
+        for (let i = 0; i < numbers.length / 2; i++) {
+          let temp = numbers[i];
+          numbers[i] = numbers[numbers.length - 1 - i];
+          numbers[numbers.length - 1 - i] = temp;
+        }
+      }
+
+      reverse2(numbers);
+
+      console.log(numbers);
+    </script>
+  </body>
+</html>
