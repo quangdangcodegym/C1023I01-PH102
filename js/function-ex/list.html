@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      // Xóa tất cả các số âm trong mảng
+      let arr = [5, -1, 7, -8, 9];
+      // tên hàm: removeNagativeNumber
+      // đầu vào: arr
+      // đẩu ra: ko có
+      removeNagativeNumber1(arr);
+
+      console.log(arr);
+      function removeNagativeNumber1(numbers) {
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] < 0) {
+            numbers.splice(i, 1);
+          }
+        }
+      }
+
+      function removeNagativeNumber2(numbers) {
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] < 0) {
+            numbers.splice(i, 1);
+          }
+        }
+        return numbers;
+      }
+
+      */
+
+      let arr = [1, 1, 4, 1, 5, 4, 4, 8, 1];
+      // [1, 4, 5, 8]
+
+      // đầu vào: mảng
+      // đầu ra:ko cần
+      // tên hàm: removeDuplicateNumber
+      function removeDuplicateNumber(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+              arr.splice(j, 1);
+              j--;
+            }
+          }
+        }
+      }
+
+      removeDuplicateNumber(arr);
+
+      console.log(arr);
+    </script>
+  </body>
+</html>
