@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        //Đếm số nguyên tố trong mảng
+        let arr = [7, 2, 8, 9, 13, -5];
+        console.log(countTotalPrime(arr));
+        let number = 7;
+        console.log(isPrime(number));
+      // đầu vào: mảng các số
+      // đầu ra: số lượng các số nto
+      // tên hàm: countTotalPrime
+        function countTotalPrime(numbers) {
+          let count = 0;
+          for (let i = 0; i < numbers.length; i++) {
+            if (isPrime(numbers[i]) == true) {
+              count++;
+            }
+          }
+          return count;
+        }
+        function isPrime(number) {
+          let flag = true;
+          if (number < 2) {
+            flag = false;
+          } else {
+            for (let j = 2; j < number - 1; j++) {
+              if (number % j == 0) {
+                flag = false;
+                break;
+              }
+            }
+          }
+          return flag;
+        }
+
+        //Kiểm tra mảng có tăng dần hay không
+        // Đầu vào: mảng
+        // Đầu ra: có/không -> boolean
+        // Tên hàm: checkAscending
+
+        let arr = [];
+
+        console.log(checkAscending1(arr));
+        function checkAscending1(arr) {
+          let flag = true;
+          if (arr.length == 0) {
+            flag = false;
+          } else {
+            for (let i = 1; i < arr.length; i++) {
+              if (arr[i] < arr[i - 1]) {
+                flag = false;
+                break;
+              }
+            }
+          }
+          return flag;
+        }
+        function checkAscending2(arr) {
+          for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[i - 1]) {
+              return false;
+            }
+          }
+          return true;
+        }
+
+
+        //Hãy liệt kê các giá trị có toàn chữ số lẻ trong mảng 1 chiều các số nguyên
+
+      let arr = [45, 735, 5, 431];
+
+      console.log(listAllOddNumber(arr));
+      // Tên hàm: listAllOddNumber
+      // Đầu vào: mảng
+      // Đầu ra: danh sách các số toàn lẻ
+      function listAllOddNumber(arr) {
+        let results = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (isAllOddNumber(arr[i])) {
+            results.push(arr[i]);
+          }
+        }
+        return results;
+      }
+      function isAllOddNumber(number) {
+        let items = (number + "").split("");
+        for (let i = 0; i < items.length; i++) {
+          if (items[i] % 2 == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+        */
+    </script>
+  </body>
+</html>
