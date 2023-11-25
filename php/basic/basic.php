@@ -1,52 +1,51 @@
 <?php
 /*
     Javascript
+    let a
     let a = 5;
 
     type of a: để xem kiểu dữ liệu
     $a : undefined
 
     PHP
-    $a;
-    $a1 = 5;            // Integer, Float, Boolean, String, Array, Object, UNDEFINED, NULL
-    var_dump($a);       // hiển thị thông tin: kiểu dữ liệu và giá trị
+    $a;                 // khai báo biến: undefined - null     
+    $a1 = 5;            // integer
+    var_dump($a);       // hiển thị kiểu dữ liệu và giá trị
     print_r($a);        // hiển thị giá trị
-    echo "HAHA";
+    echo "HAHA";        // hiển thị chuỗi
 
     $str = "CODEGYM";
     $a = "HELLO";
-    echo $a . $str;     // Muốn nối chuỗi thì dùng dấu .
-    echo "HELLO $str";  //  gần giống `${biến}` : striing literal
+    echo $a . $str;         // nối chuỗi
+    echo "HELLO {$str}";      
 
-    // -----------Biến  toàn cục - biến cục bộ
-    $x = 5; / global scope 
+    $x = 5; // biến toàn cục
     myTest();
 
     echo "Giá trị biến $y";
     function myTest()
     {
-        global $x;              // bên trong hàm muốn dùng biến toàn cục thì thêm từ khóa global
+        global $x;      // dùng biến toàn cục ở bên trong hàm        
         echo "<p>Variable x inside function is: $x</p>";
         $y = 10;
     }
 
-    // Biến toàn cục thông qua $GLOBALS['key-tenbien']
+
     $x = 5;
     $y = 10;
 
     function myTest()
     {
-        // cách khác để gọi biến toàn cục dùng $GLOBALS['key-tenbien']
+        // truy cập biến global thông qua mảng $GLOBALS
         $GLOBALS['y'] = $GLOBALS['x'] + $GLOBALS['y'];
     }
 
     myTest();
     echo $y; 
 
-    // ---- Từ khóa static: sau khi gọi hàm biến cục bộ ko bị mất đi
     function myTest()
     {
-        static $x = 0;          // cần thêm từ khóa static
+        static $x = 0;      //     
         echo $x;
         $x++;
     }
@@ -55,27 +54,25 @@
     myTest();
 
 
-    // --- So sanh echo và print
-    echo: có thể nhiều tham số, print: 1 tham số
-    echo: ko trả về (void), trả về 1 con số (int)
 
+    // có thể nhiều tham số, trả về void, NHANH
     echo "This ", "string ", "was ", "made ", "with multiple parameters.";
 
-    print "MY ";
+    // 1 tham số, trả về int, CHẬM
+    print "MY ";                    
     echo print("QUANG DANG");
 
 
-    // --- HẰNG SỐ: ko được cập nhật giá trị
-    const PI = 3.14;        // javascript dùng const để khai báo hằng sô
+    const PI = 3.14;        
     PI = 5;
 
-    define("PI", 3.14);     // php dùng define để khai báo hằng số
+    // khai báo hằng số
+    define("PI", 3.14);     
 
     PI = 5;
     echo PI;
 
 
-    // --- 
     for ($i = 0; $i < 10; $i++) {
         if ($i % 2 == 0) {
             echo $i . "<br>";
