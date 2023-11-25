@@ -15,12 +15,28 @@ for ($i = 0; $i < count($arr); $i++) {
     }
     echo $str . "<br>";
 }
-*/
+
+$str = "<table>";
 for ($i = 1; $i <= 10; $i++) {
-    $str = "";
+    $str .= "<tr>";
     for ($j = 1; $j <= 10; $j++) {
         $temp = $i * $j;
-        $str = $str . " {$i} x {$j} = {$temp}";
+        $str .= "<td> ${i} x ${j} = {$temp}</td>";
     }
-    echo $str . "<br>";
+    $str .= "</br>";
 }
+$str .= "</table>";
+
+echo $str;
+*/
+
+
+$arr = [
+    [1, 3, 9, 7],
+    [1, 4, 8, 7],
+    [3, 2, 1, 5],
+    [1, 4, 3, 7],
+];
+
+// Bài 1: tính trung bình của các số chẵn trong mảng 2 chiều
+// Bài 2: tìm ra vị trí của số chẵn đầu tiên trong mảng 2 chiều
