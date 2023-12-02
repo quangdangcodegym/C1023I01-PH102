@@ -86,7 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $x1 = round($result[0], 2);
             $x2 = round($result[1], 2);
-            echo "<div> <label> Phương trình có 2 nghiệm x1: {$x1} , x2: {$x2}</label> </div>";
+            // echo  "<div> <label> Phương trình có 2 nghiệm x1: {round($result[0], 2)} , x2: {round($result[1], 2)}</label> </div>";
+            echo sprintf("<div> <label> Phương trình có 2 nghiệm x1: %s , x2: %s</label> </div>", round($result[0], 2), round($result[0], 2));
         }
     }
 
