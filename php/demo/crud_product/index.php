@@ -1,52 +1,38 @@
 <?php
-require_once("./model/Product.php");
-require_once("./model/ProductManager.php");
 
+
+
+require_once("./model/Product.php");
+require_once("./model/ProductService.php");
+
+
+require_once("./controller/ProductController.php");
 
 
 use Model\Product;
-use Services\ProductManager;
+use Services\ProductService;
+
+use Controller\ProductController;
 
 
-$pM = new ProductManager();
 
-?>
+$controller = new ProductController();
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Products</title>
-    <style>
-        table {
-            width: 500px;
-            border-collapse: collapse;
+$parseUrl = parse_url($_SERVER['REQUEST_URI']);
+
+switch ($parseUrl['path']) {
+    case "/": {
+            $controller->showProducts();
+            break;
         }
-    </style>
-</head>
-
-<body>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Action</th>
-        </tr>
-        <?php foreach ($pM->getAllProducts() as $p) : ?>
-            <tr>
-                <td><?= $p->getId() ?></td>
-                <td><?= $p->getName() ?></td>
-                <td><?= $p->getPrice() ?></td>
-                <td>
-                    <button type="button">Edit</button>
-                    <button type="button">Delete</button>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-</body>
-
-</html>
+    case "/add": {
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                $controller->showAddProduct();
+                break;
+            } else {
+                $controller->saveProduct();
+                break;
+            }
+        }
+}
