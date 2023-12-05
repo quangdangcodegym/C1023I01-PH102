@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h1>Add product</h1>
+    <h4>Add product</h4>
 
     <form method="post" action="/add">
         <div>

@@ -14,6 +14,8 @@
 </head>
 
 <body>
+
+    <a href="/add">Add Product</a>
     <table border="1">
         <tr>
             <th>ID</th>
