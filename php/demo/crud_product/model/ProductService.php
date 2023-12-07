@@ -37,6 +37,11 @@ class ProductService
 
 
         // chuyển đối danh sách Product -> mảng
+        // lưu mảng vào file
+        $this->saveProductsToJson($products);
+    }
+    public function saveProductsToJson($products)
+    {
         $data = [];
         foreach ($products as $product) {
             $data[] = [
@@ -47,6 +52,59 @@ class ProductService
         }
 
         $jsonData = json_encode($data, JSON_PRETTY_PRINT);      // chuyên từ mảng -> array
-        file_put_contents("./data.json", $jsonData);            // lưu mảng vào file
+        file_put_contents("./data.json", $jsonData);
+    }
+
+    public function getProductById($id)
+    {
+        $products = $this->getAllProducts();
+        foreach ($products as $p) {
+            if ($p->getId() == $id) {
+                return $p;
+            }
+        }
+        return null;
+    }
+
+    public function updateProduct($id, Product $product)
+    {
+
+        $products = $this->getAllProducts();
+        foreach ($products as $p) {
+            if ($p->getId() == $id) {
+                $p->setName($product->getName());
+                $p->setPrice($product->getPrice());
+            }
+        }
+
+        $this->saveProductsToJson($products);
+    }
+
+    public function deleteProductById($id)
+    {
+        $products = $this->getAllProducts();
+        for ($i = 0; $i < count($products); $i++) {
+            if ($products[$i]->getId() == $id) {
+                array_splice($products, $i, 1);
+                break;
+            }
+        }
+        $this->saveProductsToJson($products);
+    }
+    public function getMaxId()
+    {
+        $products = $this->getAllProducts();
+
+        if (count($products) == 0) {
+            return 0;
+        } else {
+            $maxId = $products[0]->getId();
+            for ($i = 0; $i < count($products); $i++) {
+                if ($products[$i]->getId() > $maxId) {
+                    $maxId = $products[$i]->getId();
+                }
+            }
+            return $maxId;
+        }
     }
 }

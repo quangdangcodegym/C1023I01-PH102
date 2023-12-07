@@ -34,9 +34,24 @@ switch ($parseUrl['path']) {
                 $controller->showAddProduct();
                 break;
             } else {
-                // thêm sản phẩm
+                // thêm sản phẩm khi method là POST
                 $controller->saveProduct();
                 break;
             }
+        }
+    case "/edit": {
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $controller->showEditProduct();
+            } else {
+                // nếu method là POST
+                $controller->updateProduct();
+            }
+            break;
+        }
+    case "/delete": {
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $controller->deleteProduct();
+            }
+            break;
         }
 }

@@ -29,8 +29,8 @@
                 <td><?= $p->getName() ?></td>
                 <td><?= $p->getPrice() ?></td>
                 <td>
-                    <button type="button">Edit</button>
-                    <button type="button">Delete</button>
+                    <a href="/edit?id=<?= $p->getId() ?>"><button type="button">Edit</button></a>
+                    <a onclick="confirm('Bạn có muốn xóa không')" href="/delete?id=<?= $p->getId() ?>"><button type="button">Delete</button></a>
                 </td>
             </tr>
         <?php endforeach; ?>
