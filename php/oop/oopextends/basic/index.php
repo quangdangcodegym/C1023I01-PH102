@@ -41,5 +41,3 @@ class Rectangle extends Shape
 
 
 $r = new Rectangle(5, 10, "RED", true);
-
-var_dump($r->getFilled());
