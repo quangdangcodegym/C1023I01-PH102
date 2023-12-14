@@ -12,7 +12,7 @@ class Book              // Danh từ, chữ cái đầu viết hoa, ko chứa k�
     private DateTime $createAt;     // camel case: viết thường chữ dầu, viết hoa chữ cái tiếp theo
 
 
-    public function __construct(int $id, string $title, string $author, DateTime $createAt)
+    public function __construct(int $id = 0, string $title, string $author, DateTime $createAt)
     {
         $this->id = $id;
         $this->title = $title;

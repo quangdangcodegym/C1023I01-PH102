@@ -4,9 +4,11 @@ namespace Controller;
 
 
 require_once(BASEPATH . "/service/bookService.php");
-
+require_once(BASEPATH . "/model/book.php");
 
 use Service\BookService;
+use Model\Book;
+use \DateTime;
 
 class BookController
 {
@@ -27,5 +29,13 @@ class BookController
     // Show ra trang thêm sách
     public function showAddBook()
     {
+        include(BASEPATH . "/view/add.php");
+    }
+    public function saveBook()
+    {
+        $book = new Book(100, $_POST['title'], $_POST['author'], new DateTime($_POST['create']));
+
+
+        $this->bookService->saveBook($book);
     }
 }
