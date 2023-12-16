@@ -42,3 +42,14 @@ alter table products
 change column `price` `price` float null default null;
 
 insert into `products` (`name`, `create_at`) values ( 'Iphone 12', '2023-05-20');
+
+
+ALTER TABLE `products` 
+ADD COLUMN `category_id` BIGINT NULL AFTER `price`
+;
+
+-- Tạo khóa ngoại liên kết tới bảng categories
+ALTER TABLE `products` 
+ADD CONSTRAINT `fk_category_id_categories`
+  FOREIGN KEY (`category_id`)
+  REFERENCES `categories` (`id`);
