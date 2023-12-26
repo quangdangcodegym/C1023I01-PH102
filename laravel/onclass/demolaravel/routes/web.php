@@ -43,7 +43,7 @@ Route::get("/post/detail", function () {
 });
 */
 
-
+// localhost:8000/post/1
 Route::group(['prefix' => 'post'], function () {
     Route::get("/{idpost}/comments/{idcomment}", function ($idpost, $idcomment) {
         return view("post", compact("idpost", "idcomment"));

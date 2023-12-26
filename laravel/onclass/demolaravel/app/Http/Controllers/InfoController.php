@@ -10,6 +10,8 @@ class InfoController extends Controller
     {
         return view("info");
     }
+
+    // Dependeices injection
     public function calculateInfo(Request $request)
     {
         $age = $request->age;
