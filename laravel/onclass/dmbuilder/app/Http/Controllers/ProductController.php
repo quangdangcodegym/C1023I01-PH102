@@ -20,12 +20,32 @@ class ProductController extends Controller
             ->get();
         return view('products', compact('products'));
     }
-    public function showDetailProduct($id)
+    public function showEditProduct($id)
     {
-        // $product = DB::select('SELECT * from products where id = :id and category_id = :category_id', ["id" => $id, "category_id" => 1]);
         $product = DB::table('products')
             ->where('id', '=', $id)
-            ->get();
-        dd($product);
+            ->first();
+
+        return view('edit', compact('product'));
+    }
+    public function showAddProduct()
+    {
+        return view('add');
+    }
+    public function saveProduct(Request $request)
+    {
+        $name = $request->name;
+        $price = $request->price;
+        $category = $request->category;
+        $create_at = $request->create_at;
+
+        DB::table('products')
+            ->insert([
+                "name" => $name,
+                "price" => $price,
+                "category_id" => $category,
+                "create_at" => $create_at
+            ]);
+        return redirect('/product');
     }
 }

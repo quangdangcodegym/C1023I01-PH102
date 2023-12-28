@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <a href="{{ route('product.showAddProduct') }}"><button>Create</button></a>
     <table>
         <thead>
             <tr>
@@ -21,7 +21,9 @@
         <tbody>
             @foreach ($products as $p)
                 <tr>
-                    <td>{{ $p->name }}</td>
+                    <td>
+                        <a href="{{ route('product.showEditProduct', [$p->id]) }}">{{ $p->name }} </a>
+                    </td>
                     <td>{{ $p->price }}</td>
                     <td>{{ $p->create_at }}</td>
                     <td>{{ $p->cate_name }}</td>

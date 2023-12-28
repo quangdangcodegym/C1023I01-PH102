@@ -18,5 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product', [ProductController::class, 'showProducts']);
-Route::get("product/{id}", [ProductController::class, 'showDetailProduct']);
+Route::get('/product', [ProductController::class, 'showProducts'])->name('product.showProducts');
+Route::get("/product/edit/{id}", [ProductController::class, 'showEditProduct'])->name('product.showEditProduct');
+
+Route::get("/product/add", [ProductController::class, 'showAddProduct'])->name('product.showAddProduct');
+
+Route::post('/product', [ProductController::class, "saveProduct"])->name('product.saveProduct');
