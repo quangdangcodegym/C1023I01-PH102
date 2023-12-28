@@ -26,9 +26,9 @@
         <div>
             <label>Product Category: </label>
             <select name="category">
-                <option value="1">Phụ kiện</option>
-                <option value="2">Phone</option>
-                <option value="3">Laptop</option>
+                <option value="1">Laptop</option>
+                <option value="2">Phụ kiện</option>
+                <option value="3">Phone</option>
             </select>
         </div>
 

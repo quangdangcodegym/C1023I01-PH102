@@ -48,4 +48,29 @@ class ProductController extends Controller
             ]);
         return redirect('/product');
     }
+    public function updateProduct(Request $request, $id)
+    {
+        $name = $request->name;
+        $price = $request->price;
+        $category = $request->category;
+        $create_at = $request->create_at;
+        DB::table('products')
+            ->where('id', $id)
+            ->update(
+                [
+                    "name" => $name,
+                    "price" => $price,
+                    "category_id" => $category,
+                    "create_at" => $create_at
+                ]
+            );
+        return redirect('/product');
+    }
+    public function deleteProduct($id)
+    {
+        DB::table('products')
+            ->where('id', '=', $id)
+            ->delete();
+        return redirect('/product');
+    }
 }

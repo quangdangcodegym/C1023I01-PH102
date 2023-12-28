@@ -16,6 +16,7 @@
                 <td>Price</td>
                 <td>Date</td>
                 <td>Category</td>
+                <td>Delete</td>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,10 @@
                     <td>{{ $p->price }}</td>
                     <td>{{ $p->create_at }}</td>
                     <td>{{ $p->cate_name }}</td>
+                    <td>
+                        <a href="{{ route('product.deleteProduct', [$p->id]) }}"
+                            onclick="return confirm('Bạn có muốn xóa không')">Delete</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

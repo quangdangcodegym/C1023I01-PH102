@@ -13,13 +13,11 @@
         @csrf
         <div>
             <label>Product Name</label>
-            <input type="text" placeholder="Enter name" name="name"
-                value="{{ !empty($product->name) ? $product->name : '' }}" />
+            <input type="text" placeholder="Enter name" name="name" value="{{ $product->name ?? '' }}" />
         </div>
         <div>
             <label>Product price: </label>
-            <input type="number" placeholder="Enter price" name="price"
-                value="{{ !empty($product->price) ? $product->price : '' }}" />
+            <input type="number" placeholder="Enter price" name="price" value="{{ $product->price ?? '' }}" />
         </div>
         <div>
             <label>Product create_at: </label>
@@ -29,13 +27,13 @@
         <div>
             <label>Product Category: </label>
             <select name="category">
-                <option value="1">Phụ kiện</option>
-                <option value="2">Phone</option>
-                <option value="3">Laptop</option>
+                <option value="1" {{ $product->category_id == '1' ? 'selected' : '' }}>Laptop</option>
+                <option value="2" {{ $product->category_id == '2' ? 'selected' : '' }}>Phụ kiện</option>
+                <option value="3" {{ $product->category_id == '3' ? 'selected' : '' }}>Phone</option>
             </select>
         </div>
 
-        <button>Create</button>
+        <button>Edit</button>
     </form>
 </body>
 
