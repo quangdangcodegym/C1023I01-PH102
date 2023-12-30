@@ -22,3 +22,10 @@ $table->foreign('user_id')->references('id')->on('users');
 ### rollback migration
 
 php artisan migrate:rollback
+
+#### Tạo seeeder
+
+php artisan make:seeder UsersTableSeeder
+
+Chạy seeder (DatabaseSeeder):
+php artisan db:seed
