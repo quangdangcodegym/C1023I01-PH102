@@ -21,6 +21,9 @@
             <div class="mb-3">
                 <label class="form-label">Name </label>
                 <input class="form-control" type="text" name="name" placeholder="Enter Student Name" />
+                @error('name')
+                    <label class="form-label">{{ $message }}</label>
+                @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Phone </label>
