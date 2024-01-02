@@ -103,13 +103,23 @@
                         </div>
                         <div class="col-6">
                             <label class="form-label" for="">Email:</label>
-                            <input name="email" class="form-control" type="text" placeholder="Enter email" />
+                            <input name="email" value="{{ old('email') }}"
+                                class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="text"
+                                placeholder="Enter email" />
+                            @error('email')
+                                <label class="invalid-feedback"> {{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-6">
                             <label class="form-label" for="">Phone:</label>
-                            <input name="phone" class="form-control" type="text" placeholder="Enter phone" />
+                            <input name="phone" value="{{ old('phone') }}"
+                                class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="text"
+                                placeholder="Enter phone" />
+                            @error('phone')
+                                <label class="invalid-feedback"> {{ $message }}</label>
+                            @enderror
                         </div>
                         <div class="col-6">
                             <label class="form-label" for="">Gender:</label>
@@ -128,16 +138,26 @@
                                     </label>
                                 </div>
                             </div>
+                            @error('gender')
+                                <label class="invalid-feedback"> {{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-6">
                             <label class="form-label" for="">Customer type:</label>
-                            <select class="form-select" name="customer_type">
-                                <option>VIP</option>
-                                <option>Super VIP</option>
-                                <option>Normal</option>
+                            <select class="form-select {{ $errors->has('customer_type') ? 'is-invalid' : '' }}"
+                                name="customer_type">
+                                <option value="">Please select a customer type</option>
+                                <option value="1" {{ old('customer_type') == 1 ? 'selected' : '' }}>VIP</option>
+                                <option value="2" {{ old('customer_type') == 2 ? 'selected' : '' }}>Super VIP
+                                </option>
+                                <option value="3" {{ old('customer_type') == 3 ? 'selected' : '' }}>Normal
+                                </option>
                             </select>
+                            @error('customer_type')
+                                <label class="invalid-feedback"> {{ $message }}</label>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3 cp">
