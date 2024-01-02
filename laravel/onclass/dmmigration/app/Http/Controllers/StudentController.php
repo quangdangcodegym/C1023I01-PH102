@@ -28,6 +28,20 @@ class StudentController extends Controller
         $phone = $request->phone;
         $classname_id = $request->classname_id;
 
+        $this->validate(
+            $request,
+            [
+                'name' => 'required|max:20|min:5',
+                'phone' => 'required|min:5|max:11'
+            ],
+            [
+                'name.required' => 'Name must be required',
+                'name.max' => 'Name max 20 characters',
+                'name.min' => 'Name min 5 characters',
+                'phone' => 'Phone is not valid',
+            ]
+        );
+
         DB::table('students')
             ->insert([
                 'name' => $name,
