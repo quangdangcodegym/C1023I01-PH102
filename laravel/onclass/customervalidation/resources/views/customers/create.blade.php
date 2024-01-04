@@ -125,7 +125,8 @@
                             <label class="form-label" for="">Gender:</label>
                             <div class="d-flex">
                                 <div class="form-check me-2">
-                                    <input class="form-check-input" type="radio" name="gender" id="genderMale" />
+                                    <input checked class="form-check-input" type="radio" name="gender"
+                                        id="genderMale" />
                                     <label class="form-check-label" for="genderMale">
                                         Male
                                     </label>
