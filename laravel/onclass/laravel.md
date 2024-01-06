@@ -29,3 +29,12 @@ php artisan make:seeder UsersTableSeeder
 
 Chạy seeder (DatabaseSeeder):
 php artisan db:seed
+
+// ORM: object relational mapping
+
+// Tạo Model
+php artisan make:model User
+
+// Tạo controller
+
+php artisan make:controller ProductController

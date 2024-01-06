@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    // tên bảng: tương ứng: products
+    // tên bảng: tương ứng: products            // Category -> categories
     // protected $table = 'sanpham';
     // protected $primaryKey = 'email';
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }
