@@ -23,7 +23,7 @@ class ProductAdminRequest extends FormRequest
     {
         return [
             "name" => "required|min:5|max:50",
-            "image" => "required",
+            "img_url" => "required",
             "price" => "required|numeric|min:1000|max:5000000",
         ];
     }
@@ -33,7 +33,7 @@ class ProductAdminRequest extends FormRequest
             "name.required" => "Name not empty",
             "name.min" => "Name at least 5 characters",
             "name.max" => "Name at maximum 50 characters",
-            "image.required" => "Name not empty",
+            "img_url.required" => "Name not empty",
             "price.required" => "Price not empty",
             "price.min" => "Price at least 1000",
             "price.max" => "Price at maximum 5000000",

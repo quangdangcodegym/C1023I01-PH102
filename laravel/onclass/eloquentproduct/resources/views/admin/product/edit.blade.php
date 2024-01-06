@@ -15,15 +15,19 @@
             color: black !important;
         }
 
-        .card img {
-            max-height: 240px
+        .sidebar img {
+            max-width: 100%;
         }
 
-        .table img {
-            max-width: 120px;
+        .validation-error {
+            color: red;
+        }
+
+        .form-error {
+            color: red;
         }
     </style>
-    <title>Document</title>
+    <title>Show Edit Product</title>
 </head>
 
 <body>
@@ -81,43 +85,59 @@
             </nav>
         </div>
         <div class="content row">
-            <div class="col-3"></div>
-            <div class="col-9">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Image</th>
-                            <th>Category</th>
-                            <td>Action</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($products as $p)
-                            <tr>
-                                <td> {{ $p->id }}</td>
-                                <td> {{ $p->name }}</td>
-                                <td> {{ $p->price }}</td>
-                                <td>
-                                    <img src="{{ $p->img_url }}" />
-                                </td>
-                                <td>
-                                    {{ $p->category->name }}
-                                </td>
-                                <td>
-                                    <a class="btn btn-warning"
-                                        href="{{ route('admin.showAdminEditProduct', ['id' => $p->id]) }}">Edit</a>
-                                    <a class="btn btn-dark" href="{{ route('admin.deleteProduct', ['id' => $p->id]) }}"
-                                        onclick="return confirm('Are you delete it')">Delete</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+            <div class="sidebar col-3">
+                <img src="https://plus.unsplash.com/premium_photo-1703775439859-02ac42d6e322" alt=""
+                    srcset="">
+            </div>
+            <div class="col-9 row">
+                <form class="col-6" method="POST"
+                    action="{{ route('admin.updateAdminProduct', ['id' => $product->id]) }}">
+                    @csrf
+                    <div class="form-group">
+                        <label class="form-label">Name: </label>
+                        <input value="{{ old('name') ?? $product->name }}" name="name" type="text"
+                            class="form-control" placeholder="Enter fullname" />
+                        @error('name')
+                            <div class="form-error"> {{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Price: </label>
+                        <input value="{{ old('price') ?? $product->price }}" name="price" type="number"
+                            class="form-control" placeholder="Enter price" />
+                        @error('price')
+                            <div class="form-error"> {{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Image: </label>
+                        <input value="{{ old('img_url') ?? $product->img_url }}" name="img_url" type="text"
+                            class="form-control" placeholder="Enter image" />
+                        @error('img_url')
+                            <div class="form-error"> {{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Image: </label>
+                        <select class="form-select" name="category_id">
+                            @foreach ($categories as $cate)
+                                <option value="{{ $cate->id }}"
+                                    {{ old('category_id') == $cate->id || $product->category_id == $cate->id ? 'selected' : '' }}>
+                                    {{ $cate->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('category_id')
+                            <div class="form-error"> {{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Save</button>
+                        <a class="btn btn-dark" href="{{ route('admin.showAdminProduct') }}">Cancel</a>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 </body>
 

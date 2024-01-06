@@ -35,4 +35,15 @@ Route::prefix("admin")->group(function () {
         ->name("admin.showAdminCreateProduct");
     Route::post("/product/create", [ProductAdminController::class, "saveAdminProduct"])
         ->name("admin.saveAdminProduct");
+
+
+    Route::get("/product/edit/{id}", [ProductAdminController::class, "showAdminEditProduct"])
+        ->name("admin.showAdminEditProduct");
+
+    Route::post("product/edit/{id}", [ProductAdminController::class, "updateAdminProduct"])
+        ->name("admin.updateAdminProduct");
+
+
+    Route::get("/product/delete/{id}", [ProductAdminController::class, "deleteProduct"])
+        ->name("admin.deleteProduct");
 });
